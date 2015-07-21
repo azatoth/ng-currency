@@ -1,6 +1,6 @@
 {
   "name": "ng-currency",
-  "version": "0.7.14",
+  "version": "v0.8.7+aza1",
   "description": "Directive that works in conjunction with currency filter.",
   "main": "src/ng-currency.js",
   "directories": {
