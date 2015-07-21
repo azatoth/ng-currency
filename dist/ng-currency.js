@@ -19,11 +19,13 @@ angular.module('ng-currency', [])
             link: function (scope, element, attrs, ngModel) {
 
                 function decimalRex(dChar) {
-                    return RegExp("\\d|\\-|\\" + dChar, 'g');
+                    dChar =  "(\\" + dChar + "|\\.\\d{1,}$)";
+                    return RegExp("\\d|\\-|" + dChar, 'g');
                 }
 
                 function clearRex(dChar) {
-                    return RegExp("\\-{0,1}((\\" + dChar + ")|([0-9]{1,}\\" + dChar + "?))&?[0-9]{0,2}", 'g');
+                    dChar =  "(\\" + dChar + "|\\.\\d{1,}$)";
+                    return RegExp("\\-{0,1}((" + dChar + ")|([0-9]{1,}" + dChar + "?))&?[0-9]{0,2}", 'g');
                 }
 
                 function clearValue(value) {
